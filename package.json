@@ -1,5 +1,5 @@
 {
-  "name": "landing-page-tutorial",
+  "name": "popmeup",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,7 +34,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-unused-vars": "warn"
+    }
   },
   "browserslist": {
     "production": [
