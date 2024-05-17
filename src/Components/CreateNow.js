@@ -15,10 +15,11 @@ const CreateNow = () => {
    
     const handleCreateClick = async () => {
         try {
+            // Extract the content from the HTML
             const tempElement = document.createElement('div');
             tempElement.innerHTML = html;
             const content = tempElement.innerText.trim();
-            const popupId = uuidv4();  
+            const popupId = uuidv4();  //unique id for each popup content
             const { startDelay, sendInterval, hideDuration } = form.getFieldsValue();
             const response = await axios.post('https://popupbackend-jyry.onrender.com/api/v1/pop/create', {
                 popupId:popupId,
@@ -28,9 +29,9 @@ const CreateNow = () => {
                 hideDuration
             });
 
-            console.log(response.data); 
+            console.log(response.data); // Log response from API
             form.resetFields();
-            
+            // Handle success
             const createNowSection = document.getElementById("home");
             if (createNowSection) {
                 createNowSection.scrollIntoView({ behavior: "smooth" });
@@ -38,7 +39,7 @@ const CreateNow = () => {
             console.log('Popup content saved successfully!');
             message.success('Popup saved successfully');
         } catch (error) {
-           
+            // Handle error
             console.error('Error:', error);
             const createNowSection = document.getElementById("home");
             if (createNowSection) {
@@ -88,6 +89,9 @@ const CreateNow = () => {
                     </Form>
                     
                 </div>
+                {/* <button style={{ marginTop: "10px" }} className="secondary-button" onClick={handleCreateClick}>
+                    Create
+                </button> */}
             </div>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table, Button, Modal, Form, Input, message } from 'antd';
 import Editor from 'react-simple-wysiwyg';
@@ -37,8 +37,10 @@ const ShowPop = () => {
         }
     };
     useEffect(() => {
-        
+        // Fetch popups initially
         fetchPopups();
+
+        // Fetch popups every 5 seconds
         const intervalId = setInterval(fetchPopups, 5000);
 
         // Cleanup function to clear the interval when the component unmounts
@@ -86,8 +88,8 @@ const ShowPop = () => {
                     Show all the PopUps
                 </p>
             </div>
-            <div className="testimonial-section-bottom">
-                <Table dataSource={popups} columns={columns} />
+            <div className="testimonial-section-bottom" style={{flex: 1}}>
+                <Table dataSource={popups} columns={columns}   />
                 <Modal
                     title="Edit Popup"
                     visible={modalVisible}

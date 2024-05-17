@@ -77,6 +77,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-logo-container">
+        {/* <img src={Logo} alt="" /> */}
         <h2 style={{color:"#e48f0f"}}>PopMeUp</h2>
       </div>
       <div className="navbar-links-container">

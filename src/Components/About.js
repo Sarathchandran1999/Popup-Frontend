@@ -23,6 +23,12 @@ const About = () => {
         <p className="primary-text">
           You can edit your popups according to your need
         </p>
+        {/* <div className="about-buttons-container">
+          <button className="secondary-button">Learn More</button>
+          <button className="watch-video-button">
+            <BsFillPlayCircleFill /> Watch Video
+          </button>
+        </div> */}
       </div>
     </div>
   );
